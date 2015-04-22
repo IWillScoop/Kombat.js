@@ -2,7 +2,7 @@
  * kombat-tower.js
  *
  * MIT licensed
- * Copyright (C) 2015 Tim Holman, http://tholman.com
+ * Copyright (C) 2015 Julius Medrano, https://github.com/IWillScoop/kombat-tower.js
  */
 
 /*********************************************
