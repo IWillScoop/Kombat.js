@@ -4,6 +4,6 @@ Want to slowly go down a page and feel the nostalgia of playing Mortal Kombat ba
 
 ### License
 
-Elevator.js is covered by the MIT License.
+kombat-tower.js is covered by the MIT License.
 
 Copyright (C) 2015 ~ [Julius Medrano](https://github.com/IWillScoop/)

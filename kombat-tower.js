@@ -1,15 +1,15 @@
 /*!
- * Elevator.js
+ * kombat-tower.js
  *
  * MIT licensed
  * Copyright (C) 2015 Tim Holman, http://tholman.com
  */
 
 /*********************************************
- * Elevator.js
+ * kombat-tower.js
  *********************************************/
 
-var Elevator = (function() {
+var kombat = (function() {
 
     'use strict';
 
@@ -18,15 +18,15 @@ var Elevator = (function() {
 
     // Scroll vars
     var animation = null;
-    var duration = null; // ms
-    var customDuration = false;
+    var duration = null; // in milliseconds
     var startTime = null;
     var startPosition = null;
+    var customDuration = false;
 
     var mainAudio;
     var endAudio;
 
-    var elevating = false;
+    var descending = false;
 
     /**
      * Utils
@@ -85,13 +85,13 @@ var Elevator = (function() {
 //     C  O  O  O  D
 //     C__O__O__O__D
 //    [_____________]
-    function elevate() {
+    function descend() {
 
-        if( elevating ) {
+        if( descending ) {
             return;
         }
 
-        elevating = true;
+        descend = true;
         startPosition = (document.documentElement.scrollTop || body.scrollTop);
         
         // No custom duration set, so we travel at pixels per millisecond. (0.75px per ms)
@@ -110,7 +110,7 @@ var Elevator = (function() {
     function resetPositions() {
         startTime = null;
         startPosition = null;
-        elevating = false;
+        descending = false;
     }
 
     function animationFinished() {
@@ -131,7 +131,7 @@ var Elevator = (function() {
     function onWindowBlur() {
 
         // If animating, go straight to the top. And play no more music.
-        if( elevating ) {
+        if( descending ) {
 
             cancelAnimationFrame( animation );
             resetPositions();
@@ -146,8 +146,8 @@ var Elevator = (function() {
     }
 
     //@TODO: Does this need tap bindings too?
-    function bindElevateToElement( element ) {
-        element.addEventListener('click', elevate, false);
+    function bindDescendingToElement( element ) {
+        element.addEventListener('click', descend, false);
     }
 
     function main( options ) {
@@ -156,7 +156,7 @@ var Elevator = (function() {
         body = document.body;
 
         if( options.element ) {
-            bindElevateToElement( options.element );
+            bindDescendingToElement( options.element );
         }
 
         if( options.duration ) {
@@ -179,6 +179,6 @@ var Elevator = (function() {
     }
 
     return extend(main, {
-        elevate: elevate
+        descend: descend
     });
 })();
