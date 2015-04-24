@@ -40,14 +40,6 @@ var Kombat = (function() {
         return target;
     };
 
-    // Thanks Mr Penner - http://robertpenner.com/easing/
-    function easeInOutQuad( t, b, c, d ) {
-        t /= d/2;
-        if (t < 1) return c/2*t*t + b;
-        t--;
-        return -c/2 * (t*(t-2) - 1) + b;
-    };
-
     /**
      * Main
      */
@@ -58,10 +50,10 @@ var Kombat = (function() {
             startTime = time;
             setTimeout(function(){}, 2000);
         }
+        var speed = 5;
         var oldPosition = window.pageYOffset
-        var easedPosition = window.pageYOffset + 5;  
+        var easedPosition = window.pageYOffset + speed;
         window.scrollTo(0, easedPosition);
-        
         if( (window.pageYOffset - oldPosition) !== 0) {
             animation = requestAnimationFrame(animateLoop);
         } else {
@@ -77,14 +69,14 @@ var Kombat = (function() {
 
         descend = true;
         startPosition = 0;
-        console.log(startPosition);
         
-        requestAnimationFrame( animateLoop );
 
         // Start music!
         if( mainAudio ) {
             mainAudio.play();
         }
+        setTimeout(function(){requestAnimationFrame( animateLoop );}, 2000);
+
     }
 
     function resetPositions() {
