@@ -113,7 +113,7 @@ var Kombat = (function() {
                 mainAudio.currentTime = 0;
             }
 
-            window.scrollTo(0, 0);
+            window.scrollTo(0, (document.documentElement.clientHeight || document.body.clientHeight));
         }
     }
 
