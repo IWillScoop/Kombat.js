@@ -102,7 +102,7 @@ var Kombat = (function() {
 
     function onWindowBlur() {
 
-        // If animating, go straight to the top. And play no more music.
+        // If animating,  go straight to the top. And play no more music.
         if( descending ) {
 
             cancelAnimationFrame( animation );
