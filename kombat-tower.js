@@ -9,7 +9,7 @@
  * kombat-tower.js
  *********************************************/
 
-var kombat = (function() {
+var Kombat = (function() {
 
     'use strict';
 
@@ -18,10 +18,8 @@ var kombat = (function() {
 
     // Scroll vars
     var animation = null;
-    var duration = null; // in milliseconds
     var startTime = null;
     var startPosition = null;
-    var customDuration = false;
 
     var mainAudio;
     var endAudio;
@@ -58,33 +56,19 @@ var kombat = (function() {
     function animateLoop( time ) {
         if (!startTime) {
             startTime = time;
+            setTimeout(function(){}, 2000);
         }
-
-        var timeSoFar = time - startTime;
-        var easedPosition = easeInOutQuad(timeSoFar, startPosition, -startPosition, duration);                        
-        
+        var oldPosition = window.pageYOffset
+        var easedPosition = window.pageYOffset + 5;  
         window.scrollTo(0, easedPosition);
-
-        if( timeSoFar < duration ) {
+        
+        if( (window.pageYOffset - oldPosition) !== 0) {
             animation = requestAnimationFrame(animateLoop);
         } else {
             animationFinished();
         }
    };
 
-//            ELEVATE!
-//              /
-//         ____
-//       .'    '=====<0
-//       |======|
-//       |======|
-//       [IIIIII[\--()
-//       |_______|
-//       C O O O D
-//      C O  O  O D
-//     C  O  O  O  D
-//     C__O__O__O__D
-//    [_____________]
     function descend() {
 
         if( descending ) {
@@ -92,13 +76,9 @@ var kombat = (function() {
         }
 
         descend = true;
-        startPosition = (document.documentElement.scrollTop || body.scrollTop);
+        startPosition = 0;
+        console.log(startPosition);
         
-        // No custom duration set, so we travel at pixels per millisecond. (0.75px per ms)
-        if( !customDuration ) {
-            duration = (startPosition * 1.5);
-        }
-
         requestAnimationFrame( animateLoop );
 
         // Start music!
@@ -157,11 +137,6 @@ var kombat = (function() {
 
         if( options.element ) {
             bindDescendingToElement( options.element );
-        }
-
-        if( options.duration ) {
-            customDuration = true;
-            duration = options.duration;
         }
 
         if( options.mainAudio ) {
