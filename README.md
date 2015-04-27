@@ -1,5 +1,5 @@
 # Kombat.js
-Want to slowly go down a page and feel the nostalgia of playing Mortal Kombat back in the arcades? This altered version of (Tim Holman's)[https://github.com/tholman] elevator.js will do just that. This is just a for-fun project to help build my JS skills. 
+Want to slowly go down a page and feel the nostalgia of playing Mortal Kombat back in the arcades? This altered version of [Tim Holman's](https://github.com/tholman) elevator.js will do just that. This is just a for-fun project to help build my JS skills. 
 
 ### Instructions
 
