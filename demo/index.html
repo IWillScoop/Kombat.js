@@ -1,8 +1,8 @@
 <!doctype html>
 <html>
     <head>
-        <title> Elevator.js </title>
-        <meta name="description" content="Are you sick of clicking 'back to top' buttons on websites, and being lifted to the top without a real elevator experience? Elevator.js is here to help.">
+        <title> Kombat.js </title>
+        <meta name="description" content="">
 
         <!-- JS -->
         <script src='../Kombat.js'></script>
@@ -12,12 +12,13 @@
     </head>
     <body>
 
-        <h1>Elevator.js</h1>
+        <h1>Kombat.js</h1>
         <p>
-            Elevator.js fixes those awkward "scroll to top" moments the old fashioned way.
+            Kombat.js scrolls down the page, KOMBAT STYLE!
         </p>
         <div class="links">
-            <a href="http://tholman.com">By Tim Holman</a> &bull; <a href="http://github.com/tholman/elevator.js">Source & Instructions</a> &bull; <a href="https://twitter.com/share" class="twitter-share-button" data-text='Elevator.js, "back to top" buttons have never been so real! -'  data-via="twholman">Tweet</a>
+            <a href="http://www.github.com/IWillScoop/Kombat.js">By Julius Medrano </a> &bull; <a href="http://github.com/IWillScoop/Kombat.js">Source & Instructions</a> &bull; 
+            <a href="http://tholman.com">Original Concept By Tim Holman </a>
         </div>
         <div class="elevator">
             <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" viewBox="0 0 100 100" enable-background="new 0 0 100 100" xml:space="preserve" height="100px" width="100px">
@@ -26,73 +27,9 @@
                 </>
             Back to Top
         </div>
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            First we need to get to the bottom of the page.
-        </p>
+        <!--<img src="img/mk.jpg" />-->
 
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            Because you're already at the top.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            So a "back to top" button wouldn't make sense.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            Down down down.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            Wow, all this scrolling.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            This had better be worth it.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            It's going to take ages to get back to the top.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            If only we had an easy way to get back...
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            ...that is both functional and fun.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            I call "back to top" buttons elevators...
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            ...they should really behave more like them.
-        </p>
-
-        <div class="down-arrow">&#9660;</div>
-        <p>
-            Ok, here we are... click that elevator! 
-        </p>
-
-        <div class="footer">
-            <div class="back-to-top">
-                
-            </div>
-        </div>
-
-        <a class="github-link" href="https://github.com/tholman/elevator.js" target="_blank">
+        <a class="github-link" href="https://github.com/IWillScoop/Kombat.js" target="_blank">
             <img src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
         </a>
 
@@ -102,13 +39,10 @@
             var elementButton = document.querySelector('.elevator');
             var kombat = new Kombat({
                 element: elementButton,
-                mainAudio: './music/elevator-music.mp3', // Music from http://www.bensound.com/
-                endAudio:  './music/ding.mp3', // Music from http://www.bensound.com/
+                mainAudio: './music/kombat.mp3', // Music from http://www.bensound.com/
+                endAudio:  './music/laugh.mp3', // Music from http://www.bensound.com/
             });
 
         </script>
-
-        <!-- Tweet Button -->
-        <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     </body>
 </html>

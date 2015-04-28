@@ -75,7 +75,7 @@ var Kombat = (function() {
         if( mainAudio ) {
             mainAudio.play();
         }
-        setTimeout(function(){requestAnimationFrame( animateLoop );}, 2000);
+        setTimeout(function(){requestAnimationFrame( animateLoop );}, 1450);
 
     }
 
